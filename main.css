@@ -3,8 +3,10 @@ body{
     justify-content: center;
 }
 section{
-    max-width: 19em;
     text-align: center;
+}
+input{
+    width: 100%;
 }
 span{
     color: red;
