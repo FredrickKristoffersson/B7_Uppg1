@@ -21,7 +21,7 @@ describe('Variable lowercase', () => {
 
 // Har vi skapat en array av vårat gissade värde?
 // denna får jag object-typ på i main-filen men inte här?
-// vad jag läst så kan inte Jest inte detta?
+// vad jag läst så kan inte Jest detta?
 describe('Variable to array', () => {
     test('if our input value has changed to an array', () => {
         const output = createArray(guessWord);
