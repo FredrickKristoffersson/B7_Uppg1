@@ -1,31 +1,36 @@
-const secretWord = "Leksak";
-const input = document.querySelector("input");
-const inputValue = document.querySelector("input").value;
-const submit_button = document.querySelector("button");
-const test = input.value;
+/* 
+Pseudokod:
+Genom att skriva in ord i inputfältet kan vi kolla om ordet vi skriver in,
+matchar på något sätt det "hemliga" ordet vi försöker lista ut. När vi skrivit in
+våran gissning så kommer vi få ett resultat där vi ser om vi matchar på något
+sätt det hemliga ordet. Detta visar om bokstäverna står rätt, eller om de finns
+med i det hemliga ordet, men står på en annan plats.
+Svar får vi också om bokstäverna inte finns med i det hemliga ordet.
 
-input.placeholder = `Dagens ord har ${secretWord.length} bokstäver`;
+Algoritm
+1.  Användare skriver in ord (som användare gissar är det hemliga ordet)
+2.  Användare trycker på knapp när användare är klar
+3.  Inmatade värdet sparas som variabel
+4.  Variabel förändrar värden till små bokstäver
+5.  Det hemliga ordet görs om till array (H)
+6.  Det gissande ordet görs om till array (G)
+7.  Arrayer kontrolleras om deras indexvärden matchar varandra.
+8.  Är indexvärde i båda arrayer lika, visas ordet: CORRECT
+9.  Är indexvärde olika, visas ordet: INCORRECT
+10. Finns indexvärde (G) på annat indexnummber i (H), visas ordet MISPLACED
+11a.Användare får nu börja om och gissa igen
+11b.Har användare gissat rätt ord, får användare ett grattis på skärmen
+*/ 
+export const secretWord = "leksak";
+export const guessWord = "TESTAR";
+export const testText = ["H","E","J","S","A","N"];
 
-input.addEventListener("input", () => {
-    console.log(input.value);
-    console.log(input.value.match(secretWord));
-})
+export default function lowCase(input) {
+    return input.toLowerCase();
+}
 
-    submit_button.addEventListener("click", () => {
-        const test = input.value;
-        console.log(test);
-        console.log(test.length);
-        return test;
-    });
-
-    /* 
-    if :
-    indexvärde(bokstav) på input(sparad variabel) === secretWord indexvärde,
-    säg: bokstav stämmer
-    else if :
-    indexvärde(bokstav) på input(sparad variabel) = secret indexvärde längd=?
-    säg: bokstav finns, men inte denna plats
-    else : 
-    indexvärde(bokstav) = !INTE lika,
-    säg: bokstav finns inte i det hemliga ordet
-    */
+export function createArray(input) {
+    return input.split("");
+}
+console.log(createArray((lowCase(guessWord))));
+console.log(typeof(createArray(guessWord)));
