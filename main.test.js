@@ -5,9 +5,9 @@ import lowCase from './main';
 import createArray from './main';
 
 // testar minsta gränsvärde för längden på det "hemliga" ordet
-describe('Secret word', () => {
-    test('if secret word got more than 4 letters', () => {
-        expect(secretWord.length).toBeGreaterThan(4);
+describe('Secret word length match', () => {
+    test('if guess word has equal amount of letters as secretWord', () => {
+        expect(guessWord.length).toEqual(secretWord.length);
     });
 });
 
@@ -21,6 +21,7 @@ describe('Variable lowercase', () => {
 
 // Har vi skapat en array av vårat gissade värde?
 // denna får jag object-typ på i main-filen men inte här?
+// vad jag läst så kan inte Jest inte detta?
 describe('Variable to array', () => {
     test('if our input value has changed to an array', () => {
         const asdf = guessWord;
