@@ -24,8 +24,18 @@ describe('Variable lowercase', () => {
 // vad jag läst så kan inte Jest inte detta?
 describe('Variable to array', () => {
     test('if our input value has changed to an array', () => {
-        const asdf = guessWord;
-        const output = createArray(asdf);
+        const output = createArray(guessWord);
         expect(typeof output === "object").toBe(true);
     });
 });
+
+// ---------------------------------------------------------
+/* 
+Checklista:
+
+1.  Skriv ett test för funktionalitet du inte byggt än
+2.  Kör alla tester (som kommer misslyckas)
+3.  Implementera funktionaliteten
+4.  Kör alla tester (som bör lyckas, annars gå till steg 3)
+5.  Börja om från början, med nästa funktionalitet
+*/
